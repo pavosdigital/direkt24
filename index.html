@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abschlepp Direkt 24</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff; /* Hintergrund komplett weiß */
+        }
+        .image-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            max-width: 90%;
+            height: auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        @media (max-width: 768px) {
+            .image-container img {
+                max-width: 100%;
+                border-radius: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="image-wrapper"></div>
+    <script>
+        // Relative Pfade für die Bilder
+        const imagePaths = [
+            "head.png",
+            "1.png",
+            "2.png",
+            "3.png",
+            "4.png",
+            "5.png",
+            "6.png",
+            "7.png",
+            "8.png"
+        ];
+
+        // Container für Bilder
+        const wrapper = document.getElementById('image-wrapper');
+        imagePaths.forEach(path => {
+            const container = document.createElement('div');
+            container.classList.add('image-container');
+            
+            const img = document.createElement('img');
+            img.src = path;
+            img.alt = "Abschleppdienst Bild";
+            
+            container.appendChild(img);
+            wrapper.appendChild(container);
+        });
+    </script>
+</body>
+</html>
